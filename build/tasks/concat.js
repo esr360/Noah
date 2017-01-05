@@ -10,9 +10,3 @@ NOAH.concat({
     src : NOAH.scripts('selfserve'),
     dest: 'public/js/selfserve.js'
 });
-
-// Internal
-NOAH.concat({
-    src : NOAH.scripts('internal'),
-    dest: 'public/js/internal.js'
-});

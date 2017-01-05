@@ -34,10 +34,6 @@ bs.watch('assets/_styles/**/*.scss', function(event, file) {
           src : 'assets/_styles/themes/selfserve.scss',
           dest: 'public/styles/selfserve.css'
       });
-      NOAH.sass({
-          src : 'assets/_styles/themes/internal.scss',
-          dest: 'public/styles/internal.css'
-      });
     }
 });
 
@@ -56,14 +52,6 @@ bs.watch('assets/_js/**/*.js', function(event, file) {
       NOAH.uglify({
           src : 'public/js/selfserve.js',
           dest: 'public/js/selfserve.min.js'
-      });
-      NOAH.concat({
-          src : NOAH.scripts('internal'),
-          dest: 'public/js/internal.js'
-      });
-      NOAH.uglify({
-          src : 'public/js/internal.js',
-          dest: 'public/js/internal.min.js'
       });
     }
 });

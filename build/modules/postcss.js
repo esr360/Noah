@@ -12,10 +12,10 @@ var postcss = require('postcss');
  * Run autoprefixer on a CSS file
  */
 NOAH.postcss = (function(options) {
-    var source = options.source;
+    var src = options.src;
     var dest = options.dest;
 
-    var css = fs.readFileSync(source, 'utf8');
+    var css = fs.readFileSync(src, 'utf8');
 
     postcss([autoprefixer]).process(css).then(function(result) {
         result.warnings().forEach(function(warn) {

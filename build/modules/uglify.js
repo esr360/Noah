@@ -6,7 +6,7 @@ var NOAH = NOAH || {};
  * NOAH.uglify
  * Used to minify/uglify Javascript files
  */
-NOAH.uglify = (function(opts) {
+NOAH.uglify = (function(options) {
 
     /** Requirements */
     var fs = require('fs');
@@ -14,10 +14,10 @@ NOAH.uglify = (function(opts) {
     var mkdirp = require('mkdirp');
     var getDirName = require('path').dirname;
 
-    var source = opts.src;
-    var distPath = opts.dest;
+    var src = options.src;
+    var distPath = options.dest;
 
-    var result = UglifyJS.minify(source);
+    var result = UglifyJS.minify(src);
 
     mkdirp(getDirName(distPath), function (err) {
       if (err) return cb(err);

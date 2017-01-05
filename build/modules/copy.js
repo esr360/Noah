@@ -10,10 +10,10 @@ var fs = require('fs-extra');
  * Copy a file/directory from one location to another
  */
 NOAH.copy = (function(options) {
-    var source = options.source;
+    var src = options.src;
     var dest = options.dest;
 
-    fs.copy(source, dest, function(err) {
+    fs.copy(src, dest, function(err) {
         if (err) return console.error(err);
     });
 });

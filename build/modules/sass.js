@@ -6,26 +6,26 @@ var NOAH = NOAH || {};
  * NOAH.sass
  * Compile Sass/Scss files
  */
-NOAH.sass = (function(opts) {
+NOAH.sass = (function(options) {
 
     /** Requirements */
     var sass = require('node-sass');
     var fs = require('fs');
     var mkdirp = require('mkdirp');
     var getDirName = require('path').dirname;
-    var style = opts.style || 'expanded';
+    var style = options.style || 'expanded';
 
     var result = sass.renderSync({
-        file: opts.src,
+        file: options.src,
         outputStyle: style
     });
 
-    mkdirp(getDirName(opts.dest), function(err) {
+    mkdirp(getDirName(options.dest), function(err) {
       if (err) return cb(err);
-      fs.writeFile(opts.dest, result.css);
+      fs.writeFile(options.dest, result.css);
     });
 
-    console.log(' ' + opts.dest + ' built.');
+    console.log(' ' + options.dest + ' built.');
 });
 
 // Export the function to use in other files
