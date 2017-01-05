@@ -10,13 +10,14 @@ var filePaths = require('./file-paths').filePaths;
  */
 NOAH.concat = (function(options) {
 
-    /** Requirements */
+    // Requirements
     var fs = require('fs');
     var mkdirp = require('mkdirp');
     var getDirName = require('path').dirname;
 
+    // Options
     var files = options.src;
-    var dest = options.dest;
+    var dest  = options.dest;
 
     var out = files.map(function(filePath) {
         return fs.readFileSync(filePath).toString();

@@ -9,7 +9,7 @@
   "dependencies": {
     "assemble": "^0.17.1",
     "autoprefixer": "^6.5.1",
-    "browser-sync": "^2.17.5",
+    "browser-sync": "^2.18.5",
     "chai": "^3.5.0",
     "fs-extra": "^0.30.0",
     "gulp-extname": "^0.2.2",

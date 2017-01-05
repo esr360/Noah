@@ -10,8 +10,10 @@ var fs = require('fs-extra');
  * Clean a directory
  */
 NOAH.clean = (function(options) {
-  var dir = options.dir;
-  fs.removeSync(dir);
+    // Options
+    var dir = options.dir;
+
+    fs.removeSync(dir);
 });
 
 // Export the function to use in other files

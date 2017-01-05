@@ -2,7 +2,7 @@
 
 var NOAH = NOAH || {};
 
-/** Requirements */
+// Requirements
 var karma = require('karma').Server
 
 /**
@@ -11,45 +11,46 @@ var karma = require('karma').Server
  */
 NOAH.test = (function(options) {
 
-  var component = options.component || '*';
-  var callback  = options.callback || process.exit;
-  var singlerun = (options.singlerun !== 'undefined') ? options.singlerun : true;
+    // Options
+    var component = options.component || '*';
+    var callback  = options.callback || process.exit;
+    var singlerun = (options.singlerun !== 'undefined') ? options.singlerun : true;
 
-  karma.start({
+    karma.start({
 
-      frameworks: [
-        'mocha', 
-        'chai', 
-        'sinon-chai'
-      ],
+        frameworks: [
+            'mocha', 
+            'chai', 
+            'sinon-chai'
+        ],
 
-      plugins: [
-        'karma-chai-plugins',
-        'karma-mocha',
-        'karma-mocha-reporter',
-        'karma-phantomjs-launcher'
-      ],
+        plugins: [
+            'karma-chai-plugins',
+            'karma-mocha',
+            'karma-mocha-reporter',
+            'karma-phantomjs-launcher'
+        ],
 
-      files: [
-        'assets/vendor/**/*.js',
-        'assets/js/*.js',
-        'test/js/' + component + '.test.js'
-      ],
+        files: [
+            'assets/vendor/**/*.js',
+            'assets/js/*.js',
+            'test/js/' + component + '.test.js'
+        ],
 
-      reporters: ['mocha'],
+        reporters: ['mocha'],
 
-      browsers: ['PhantomJS'],
+        browsers: ['PhantomJS'],
 
-      client: {
-        captureConsole: true
-      },
+        client: {
+            captureConsole: true
+        },
 
-      singleRun: singlerun,
-      port: 9876,
-      colors: true,
-      autoWatch: true
+        singleRun: singlerun,
+        port: 9876,
+        colors: true,
+        autoWatch: true
 
-  }, callback);
+    }, callback);
 
 });
 

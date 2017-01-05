@@ -8,11 +8,13 @@ var NOAH = NOAH || {};
  */
 NOAH.sass = (function(options) {
 
-    /** Requirements */
+    // Requirements
     var sass = require('node-sass');
     var fs = require('fs');
     var mkdirp = require('mkdirp');
     var getDirName = require('path').dirname;
+
+    // Options
     var style = options.style || 'expanded';
 
     var result = sass.renderSync({

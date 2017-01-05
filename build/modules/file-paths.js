@@ -9,7 +9,6 @@ var NOAH = NOAH || {};
 NOAH.filePaths = (function(dir, filelist) {
     var path = path || require('path');
     var fs = fs || require('fs');
-    
     var files = fs.readdirSync(dir);
 
     // ignore these files

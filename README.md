@@ -1,6 +1,11 @@
 # Noah
 
-> Noah is a boilerplate for building front-end web apps using NPM build scripts.
+> Noah is a boilerplate for compiling front-end web apps using NPM build scripts.
+
+- [Install](#install)
+- [Tasks](#tasks)
+- [Usage](#usage)
+- [Dependencies](#dependencies)
 
 ### Why NPM scripts?
 
@@ -18,10 +23,10 @@
 
 ### What's included?
 
-- CSS/Sass lint|autoprefix|compile
-- JS concatenate|uglify|lint|unit test
+- CSS/Sass lint | autoprefix | compile
+- JS concatenate | uglify | lint | unit test
 - Assemble/Handlebars
-- Browsersync
+- Browsersync + watching & live reload
 - General tasks
 
 ### Install
@@ -78,12 +83,11 @@ Run specific tasks from above in a specific order
 
 ### Usage
 
-Each executable task has its own `.js` file &ast; (found in the `/build/tasks/` directory) which is where your project specific details are passed for that task. Executing a task typically looks something like:
+Most executable tasks have their own `.js` file &ast; (found in the `/build/tasks/` directory) which is where your project specific details are passed for that task. Executing a task typically looks something like:
 
 ```js
 NOAH.task({
-    src : 'public/js/selfserve.js',
-    dest: 'public/js/selfserve.min.js'
+    option : value
 });
 ```
 
@@ -91,19 +95,17 @@ The corresponding entry in `package.json` would look something like:
 
 ```json
 "scripts": {
-    "task": "node ./build/tasks/task.js"
+    "yourTask": "node ./build/tasks/task.js"
 }
 ```
 
 And is executed from the command line by:
 
 ```
-npm run task
+npm run yourTask
 ```
 
-Where `task` is the name of the script/task to run.
-
-<small>&ast; Currently the `assemble`, `jshint` and `scsslint` tasks are executed via their CLI interface, as opposed to their API, pending future investigation.</small>
+<small>&ast; Currently the `jshint` and `scsslint` tasks are executed via their CLI interface, as opposed to their API, pending future investigation.</small>
 
 Each task has a default, basic-usage example, which will likely need to be modified for your project. Ensure you go through each task and check the options reflect your project's structure. For example, if your project requires two CSS files to be compiled, you may have something like this in your `/build/tasks/sass.js` file:
 
@@ -131,7 +133,7 @@ Noah installs the following NPM dependencies:
 "dependencies": {
     "assemble"                : "^0.17.1",
     "autoprefixer"            : "^6.5.1",
-    "browser-sync"            : "^2.17.5",
+    "browser-sync"            : "^2.18.5",
     "chai"                    : "^3.5.0",
     "fs-extra"                : "^0.30.0",
     "gulp-extname"            : "^0.2.2",

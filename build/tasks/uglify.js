@@ -2,6 +2,7 @@
 
 var NOAH = NOAH || {};
 
+// Requirements
 NOAH.uglify = require('../modules/uglify').NOAH;
 
 NOAH.uglify({

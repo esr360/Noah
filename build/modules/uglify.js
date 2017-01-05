@@ -8,23 +8,24 @@ var NOAH = NOAH || {};
  */
 NOAH.uglify = (function(options) {
 
-    /** Requirements */
+    // Requirements 
     var fs = require('fs');
     var UglifyJS = require('uglify-js');
     var mkdirp = require('mkdirp');
     var getDirName = require('path').dirname;
 
-    var src = options.src;
-    var distPath = options.dest;
+    // Options
+    var src  = options.src;
+    var dest = options.dest;
 
     var result = UglifyJS.minify(src);
 
-    mkdirp(getDirName(distPath), function (err) {
+    mkdirp(getDirName(dest), function (err) {
       if (err) return cb(err);
-      fs.writeFile(distPath, result.code);
+      fs.writeFile(dest, result.code);
     });
 
-    console.log(' ' + distPath + ' built.');
+    console.log(' ' + dest + ' built.');
 });
 
 // Export the function to use in other files

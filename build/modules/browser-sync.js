@@ -2,9 +2,9 @@
 
 var NOAH = NOAH || {};
 
-/** Requirements */
-var fs = require('fs');
-var bs = require('browser-sync').create();
+// Requirements
+var fs  = require('fs');
+var bs  = require('browser-sync').create();
 var app = require('../../assemblefile');
 
 /**

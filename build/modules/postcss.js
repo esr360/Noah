@@ -2,7 +2,7 @@
 
 var NOAH = NOAH || {};
 
-/** Requirements */
+// Requirements
 var fs = require('fs');
 var autoprefixer = require('autoprefixer');
 var postcss = require('postcss');
@@ -12,7 +12,9 @@ var postcss = require('postcss');
  * Run autoprefixer on a CSS file
  */
 NOAH.postcss = (function(options) {
-    var src = options.src;
+
+    // Options
+    var src  = options.src;
     var dest = options.dest;
 
     var css = fs.readFileSync(src, 'utf8');

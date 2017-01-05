@@ -2,28 +2,29 @@
 
 var NOAH = NOAH || {};
 
-var bs = require('browser-sync').create();
-var app = require('../../assemblefile');
-var extname = require('gulp-extname');
+// Requirements
+var bs        = require('browser-sync').create();
+var app       = require('../../assemblefile');
+var extname   = require('gulp-extname');
 var filePaths = require('../modules/file-paths').filePaths;
 
-/** Custom Tasks */
-NOAH.serve   = require('../modules/browser-sync').NOAH;
-NOAH.sass    = require('../modules/sass').NOAH;
-NOAH.concat  = require('../modules/concat').NOAH;
-NOAH.uglify  = require('../modules/uglify').NOAH;
-NOAH.test    = require('../modules/karma').NOAH;
+// Custom Tasks
+NOAH.serve  = require('../modules/browser-sync').NOAH;
+NOAH.sass   = require('../modules/sass').NOAH;
+NOAH.concat = require('../modules/concat').NOAH;
+NOAH.uglify = require('../modules/uglify').NOAH;
+NOAH.test   = require('../modules/karma').NOAH;
 
 NOAH.serve({
     notify: false,
     open: false,
     files: [
-      'dist/css/*.css', 
-      'dist/js/*.js',
-      'dist/*.html'
+      './dist/css/*.css', 
+      './dist/js/*.js',
+      './dist/*.html'
     ],
     server: {
-        baseDir: 'dist'
+        baseDir: './dist'
     }
 });
 
