@@ -1,17 +1,17 @@
 'use strict';
 
-var OLCS = OLCS || {};
+var NOAH = NOAH || {};
 
-OLCS.uglify = require('../modules/uglify').OLCS;
+NOAH.uglify = require('../modules/uglify').NOAH;
 
 // Selfserve
-OLCS.uglify({
+NOAH.uglify({
     src : 'public/js/selfserve.js',
     dest: 'public/js/selfserve.min.js'
 });
 
 // Internal
-OLCS.uglify({
+NOAH.uglify({
     src : 'public/js/internal.js',
     dest: 'public/js/internal.min.js'
 });

@@ -1,12 +1,12 @@
 'use strict';
 
-var OLCS = OLCS || {};
+var NOAH = NOAH || {};
 
 /**
- * OLCS.filePaths
+ * NOAH.filePaths
  * Get an array of files from a directory
  */
-OLCS.filePaths = (function(dir, filelist) {
+NOAH.filePaths = (function(dir, filelist) {
     var path = path || require('path');
     var fs = fs || require('fs');
     
@@ -35,4 +35,4 @@ OLCS.filePaths = (function(dir, filelist) {
     return filelist;
 });
 
-exports.filePaths = OLCS.filePaths;
+exports.filePaths = NOAH.filePaths;

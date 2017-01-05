@@ -1,12 +1,12 @@
 'use strict';
 
-var OLCS = OLCS || {};
+var NOAH = NOAH || {};
 
 /**
- * OLCS.uglify
+ * NOAH.uglify
  * Used to minify/uglify Javascript files
  */
-OLCS.uglify = (function(opts) {
+NOAH.uglify = (function(opts) {
 
     /** Requirements */
     var fs = require('fs');
@@ -28,4 +28,4 @@ OLCS.uglify = (function(opts) {
 });
 
 // Export the function to use in other files
-exports.OLCS = OLCS.uglify;
+exports.NOAH = NOAH.uglify;

@@ -1,12 +1,12 @@
 'use strict';
 
-var OLCS = OLCS || {};
+var NOAH = NOAH || {};
 
 /**
- * OLCS.sass
+ * NOAH.sass
  * Compile Sass/Scss files
  */
-OLCS.sass = (function(opts) {
+NOAH.sass = (function(opts) {
 
     /** Requirements */
     var sass = require('node-sass');
@@ -29,4 +29,4 @@ OLCS.sass = (function(opts) {
 });
 
 // Export the function to use in other files
-exports.OLCS = OLCS.sass;
+exports.NOAH = NOAH.sass;

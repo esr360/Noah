@@ -1,10 +1,10 @@
 'use strict';
 
-var OLCS = OLCS || {};
+var NOAH = NOAH || {};
 
-OLCS.copy = require('../modules/copy').OLCS;
+NOAH.copy = require('../modules/copy').NOAH;
 
-OLCS.copy({
+NOAH.copy({
   source: 'assets/_images', 
   dest: 'public/images/'
 });

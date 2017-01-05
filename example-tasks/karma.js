@@ -1,10 +1,10 @@
 'use strict';
 
-var OLCS = OLCS || {};
+var NOAH = NOAH || {};
 
-OLCS.test = require('../modules/karma').OLCS;
+NOAH.test = require('../modules/karma').NOAH;
 
-OLCS.test({
+NOAH.test({
   component: '*',
   singlerun: true
 });

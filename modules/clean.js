@@ -1,18 +1,18 @@
 'use strict';
 
-var OLCS = OLCS || {};
+var NOAH = NOAH || {};
 
 /** Requirements */
 var fs = require('fs-extra');
 
 /**
- * OLCS.clean
+ * NOAH.clean
  * Clean a directory
  */
-OLCS.clean = (function(options) {
+NOAH.clean = (function(options) {
   var dir = options.dir;
   fs.removeSync(dir);
 });
 
 // Export the function to use in other files
-exports.OLCS = OLCS.clean;
+exports.NOAH = NOAH.clean;

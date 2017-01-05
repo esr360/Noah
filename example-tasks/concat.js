@@ -1,18 +1,18 @@
 'use strict';
 
-var OLCS = OLCS || {};
+var NOAH = NOAH || {};
 
-OLCS.concat  = require('../modules/concat').OLCS;
-OLCS.scripts = require('../modules/concat').scripts;
+NOAH.concat  = require('../modules/concat').NOAH;
+NOAH.scripts = require('../modules/concat').scripts;
 
 // Selfserve
-OLCS.concat({
-    src : OLCS.scripts('selfserve'),
+NOAH.concat({
+    src : NOAH.scripts('selfserve'),
     dest: 'public/js/selfserve.js'
 });
 
 // Internal
-OLCS.concat({
-    src : OLCS.scripts('internal'),
+NOAH.concat({
+    src : NOAH.scripts('internal'),
     dest: 'public/js/internal.js'
 });

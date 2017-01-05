@@ -1,16 +1,16 @@
 'use strict';
 
-var OLCS = OLCS || {};
+var NOAH = NOAH || {};
 
 /** Requirements */
 const fs = require('mz/fs');
 const svg2png = require('svg2png');
 
 /**
- * OLCS.svg2png
+ * NOAH.svg2png
  * Convert .svg images into .png
  */
-OLCS.svg2png = (function(options) {
+NOAH.svg2png = (function(options) {
     var source = options.source;
     var dest = options.dest;
     
@@ -36,4 +36,4 @@ OLCS.svg2png = (function(options) {
 });
 
 // Export the function to use in other files
-exports.OLCS = OLCS.svg2png;
+exports.NOAH = NOAH.svg2png;

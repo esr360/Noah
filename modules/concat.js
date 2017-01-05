@@ -1,14 +1,14 @@
 'use strict';
 
-var OLCS = OLCS || {};
+var NOAH = NOAH || {};
 
 var filePaths = require('./file-paths').filePaths;
 
 /**
- * OLCS.concat
+ * NOAH.concat
  * Concatenate an array of files
  */
-OLCS.concat = (function(options) {
+NOAH.concat = (function(options) {
 
     /** Requirements */
     var fs = require('fs');
@@ -31,10 +31,10 @@ OLCS.concat = (function(options) {
 });
 
 // Export the function to use in other files
-exports.OLCS = OLCS.concat;
+exports.NOAH = NOAH.concat;
 
 // Helper to get all scripts
-OLCS.scripts = function(theme) {
+NOAH.scripts = function(theme) {
     return [
         'assets/_js/vendor/jquery.1.11.0.js',
         'assets/_js/vendor/chosen.jquery.min.js',
@@ -47,5 +47,5 @@ OLCS.scripts = function(theme) {
     ]);
 }
 
-// Export the scripts to be used by OLCS
-exports.scripts = OLCS.scripts;
+// Export the scripts to be used by NOAH
+exports.scripts = NOAH.scripts;

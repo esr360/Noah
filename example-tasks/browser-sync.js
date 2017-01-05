@@ -1,20 +1,20 @@
 'use strict';
 
-var OLCS = OLCS || {};
+var NOAH = NOAH || {};
 
 var bs = require('browser-sync').create();
 var app = require('../../assemblefile');
 var extname = require('gulp-extname');
 
 /** Custom Tasks */
-OLCS.serve   = require('../modules/browser-sync').OLCS;
-OLCS.sass    = require('../modules/sass').OLCS;
-OLCS.concat  = require('../modules/concat').OLCS;
-OLCS.scripts = require('../modules/concat').scripts;
-OLCS.uglify  = require('../modules/uglify').OLCS;
-OLCS.test    = require('../modules/karma').OLCS;
+NOAH.serve   = require('../modules/browser-sync').NOAH;
+NOAH.sass    = require('../modules/sass').NOAH;
+NOAH.concat  = require('../modules/concat').NOAH;
+NOAH.scripts = require('../modules/concat').scripts;
+NOAH.uglify  = require('../modules/uglify').NOAH;
+NOAH.test    = require('../modules/karma').NOAH;
 
-OLCS.serve({
+NOAH.serve({
     notify: false,
     open: false,
     files: [
@@ -30,11 +30,11 @@ OLCS.serve({
 // Watch Sass files
 bs.watch('assets/_styles/**/*.scss', function(event, file) {
     if (event === 'change') {
-      OLCS.sass({
+      NOAH.sass({
           src : 'assets/_styles/themes/selfserve.scss',
           dest: 'public/styles/selfserve.css'
       });
-      OLCS.sass({
+      NOAH.sass({
           src : 'assets/_styles/themes/internal.scss',
           dest: 'public/styles/internal.css'
       });
@@ -45,23 +45,23 @@ bs.watch('assets/_styles/**/*.scss', function(event, file) {
 bs.watch('assets/_js/**/*.js', function(event, file) {
     var filename = file.replace(/^.*[\\\/]/, '').replace(/\..+$/, '');
     if (event === 'change') {
-      OLCS.test({
+      NOAH.test({
           component: filename,
           singlerun: false
       });
-      OLCS.concat({
-          src : OLCS.scripts('selfserve'),
+      NOAH.concat({
+          src : NOAH.scripts('selfserve'),
           dest: 'public/js/selfserve.js'
       });
-      OLCS.uglify({
+      NOAH.uglify({
           src : 'public/js/selfserve.js',
           dest: 'public/js/selfserve.min.js'
       });
-      OLCS.concat({
-          src : OLCS.scripts('internal'),
+      NOAH.concat({
+          src : NOAH.scripts('internal'),
           dest: 'public/js/internal.js'
       });
-      OLCS.uglify({
+      NOAH.uglify({
           src : 'public/js/internal.js',
           dest: 'public/js/internal.min.js'
       });

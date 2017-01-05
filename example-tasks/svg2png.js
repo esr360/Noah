@@ -1,10 +1,10 @@
 'use strict';
 
-var OLCS = OLCS || {};
+var NOAH = NOAH || {};
 
-OLCS.svg2png = require('../modules/svg2png').OLCS;
+NOAH.svg2png = require('../modules/svg2png').NOAH;
 
-OLCS.svg2png({
+NOAH.svg2png({
   source: 'assets/_images/svg/',
   dest  : 'public/images/bitmap/'
 });

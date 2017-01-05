@@ -1,6 +1,6 @@
 'use strict';
 
-var OLCS = OLCS || {};
+var NOAH = NOAH || {};
 
 /** Requirements */
 var fs = require('fs');
@@ -8,10 +8,10 @@ var autoprefixer = require('autoprefixer');
 var postcss = require('postcss');
 
 /**
- * OLCS.postcss
+ * NOAH.postcss
  * Run autoprefixer on a CSS file
  */
-OLCS.postcss = (function(options) {
+NOAH.postcss = (function(options) {
     var source = options.source;
     var dest = options.dest;
 
@@ -26,4 +26,4 @@ OLCS.postcss = (function(options) {
 });
 
 // Export the function to use in other files
-exports.OLCS = OLCS.postcss;
+exports.NOAH = NOAH.postcss;

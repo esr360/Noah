@@ -1,15 +1,15 @@
 'use strict';
 
-var OLCS = OLCS || {};
+var NOAH = NOAH || {};
 
 /** Requirements */
 var karma = require('karma').Server
 
 /**
- * OLCS.test
+ * NOAH.test
  * Run unit tests using Karma
  */
-OLCS.test = (function(options) {
+NOAH.test = (function(options) {
 
   var component = options.component || '*';
   var callback  = options.callback || process.exit;
@@ -56,4 +56,4 @@ OLCS.test = (function(options) {
 });
 
 // Export the function to use in other files
-exports.OLCS = OLCS.test;
+exports.NOAH = NOAH.test;

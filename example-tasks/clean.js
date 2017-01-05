@@ -1,9 +1,9 @@
 'use strict';
 
-var OLCS = OLCS || {};
+var NOAH = NOAH || {};
 
-OLCS.clean = require('../modules/clean').OLCS;
+NOAH.clean = require('../modules/clean').NOAH;
 
-OLCS.clean({
+NOAH.clean({
   dir: 'public'
 });

@@ -1,15 +1,15 @@
 'use strict';
 
-var OLCS = OLCS || {};
+var NOAH = NOAH || {};
 
 /** Requirements */
 var fs = require('fs-extra');
 
 /**
- * OLCS.copy
+ * NOAH.copy
  * Copy a file/directory from one location to another
  */
-OLCS.copy = (function(options) {
+NOAH.copy = (function(options) {
     var source = options.source;
     var dest = options.dest;
 
@@ -19,4 +19,4 @@ OLCS.copy = (function(options) {
 });
 
 // Export the function to use in other files
-exports.OLCS = OLCS.copy;
+exports.NOAH = NOAH.copy;

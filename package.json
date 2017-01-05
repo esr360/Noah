@@ -1,6 +1,7 @@
 {
   "name": "Noah",
   "version": "1.0.0",
+  "description": "Noah is a boilerplate for building front-end web apps using NPM build scripts.",
   "author": "T-Mex",
   "contributors": [
     "Edmund Reed <esr360@live.com>"

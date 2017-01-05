@@ -1,10 +1,10 @@
 'use strict';
 
-var OLCS = OLCS || {};
+var NOAH = NOAH || {};
 
-OLCS.sprites = require('../modules/dr-svg-sprites').OLCS;
+NOAH.sprites = require('../modules/dr-svg-sprites').NOAH;
 
-OLCS.sprites({
+NOAH.sprites({
     previewPath: 'public/styleguides',
     spriteElementPath: 'assets/_images/svg',
     spritePath: 'public/images/svg/icon-sprite.svg',
