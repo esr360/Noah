@@ -34,9 +34,45 @@ npm install noah-npm
 
 ### Tasks
 
+#### Core Tasks
+
+| Task          | Description                                     | Execute             |
+| ------------- | ----------------------------------------------- | ------------------- |
+| Assemble      | Compile handlebars templates                    | npm run assemble    |
+| Browsersync   | Start a new server and watch JS/CSS files       | npm run browsersync |
+| Clean         | Clean/empty a directory                         | npm run clean       |
+| Concat        | Concatenate multiple files                      | npm run concat      |
+| Copy          | Copy files to a new location                    | npm run copy        |
+| Karma         | Run JS unit tests                               | npm run test        |
+| PostCSS       | Run Autoprefixer                                | npm run postcss     |
+| Sass          | Compile Sass                                    | npm run sass        |
+| Sass-lint     | Lint Sass files                                 | npm run scsslint    |
+| Uglify        | Uglify JS files                                 | npm run uglify      |
+
+#### Asset Tasks
+
+| Task          | Description                                     | Execute             |
+| ------------- | ----------------------------------------------- | ------------------- |
+| Templates     | Run all required tasks to compile templates     | npm run templates   |
+| Images        | Copy images to `dist` directory                 | npm run images      |
+| CSS           | Compile Sass and run Autoprefixer               | npm run css         |
+| JS            | Concatenate and uglify JS files                 | npm run js          |
+
+#### Combined Tasks
+
+Run specific tasks from above in a specific order
+
+| Task          | Description                                                      | Execute             |
+| ------------- | ---------------------------------------------------------------- | ------------------- |
+| Compile       | Runs `scsslint`, `jshint`, `clean`, `css`, `js` & `images` tasks | npm run compile     |
+| Build         | Runs `compile` and `templates` tasks                             | npm run build       |
+| Serve         | Runs `build` and `browsersync` tasks                             | npm run serve       |
+| Go            | Short alias for `browsersync` task                               | npm run go          |
+| CI            | Reserved for continuous integration tools, e.g. Travis/Jenkins   | npm run ci          |
+
 ### Usage
 
-Each executable task has its own `.js` file (found in the `/build/tasks/` directory) which is where your project specific details are passed for that task. Executing typically looks something like:
+Each executable task has its own `.js` file (found in the `/build/tasks/` directory) which is where your project specific details are passed for that task. Executing a task typically looks something like:
 
 ```js
 NOAH.task({

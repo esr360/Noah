@@ -34,6 +34,7 @@
     "uglify-js": "^2.7.4"
   },
   "scripts": {
+    "assemble"   : "./node_modules/assemble/bin/cli.js app",
     "browsersync": "node ./build/tasks/browser-sync.js",
     "clean"      : "node ./build/tasks/clean.js",
     "concat"     : "node ./build/tasks/concat.js",
@@ -44,9 +45,6 @@
     "scsslint"   : "./node_modules/sass-lint/bin/sass-lint.js -v",
     "test"       : "node ./build/tasks/karma.js",
     "uglify"     : "node ./build/tasks/uglify.js",
-
-    "selfserve"  : "./node_modules/assemble/bin/cli.js selfserve",
-    "internal"   : "./node_modules/assemble/bin/cli.js internal",
 
     "templates"  : "npm-run-all -s selfserve internal",
     "images"     : "npm-run-all -s copy",
