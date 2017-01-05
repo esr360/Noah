@@ -1,0 +1,65 @@
+{
+  "name": "Noah",
+  "version": "1.0.0",
+  "author": "T-Mex",
+  "contributors": [
+    "Edmund Reed <esr360@live.com>"
+  ],
+  "dependencies": {
+    "assemble": "^0.17.1",
+    "autoprefixer": "^6.5.1",
+    "browser-sync": "^2.17.5",
+    "chai": "^3.5.0",
+    "fs-extra": "^0.30.0",
+    "gulp-extname": "^0.2.2",
+    "handlebars": "^4.0.5",
+    "handlebars-helper-repeat": "^0.3.1",
+    "handlebars-helpers": "^0.7.5",
+    "jshint": "^2.9.4",
+    "jshint-stylish": "^2.2.1",
+    "karma": "^1.3.0",
+    "karma-chai-plugins": "^0.8.0",
+    "karma-mocha": "^1.2.0",
+    "karma-mocha-reporter": "^2.2.0",
+    "karma-phantomjs-launcher": "^1.0.2",
+    "mkdirp": "^0.5.1",
+    "mocha": "^3.1.2",
+    "mz": "^2.4.0",
+    "node-sass": "^3.10.1",
+    "npm-run-all": "^3.1.1",
+    "postcss": "^5.2.5",
+    "pre-commit": "^1.1.3",
+    "sass-lint": "^1.9.1",
+    "uglify-js": "^2.7.4"
+  },
+  "scripts": {
+    "browsersync": "node ./build/tasks/browser-sync.js",
+    "clean"      : "node ./build/tasks/clean.js",
+    "concat"     : "node ./build/tasks/concat.js",
+    "copy"       : "node ./build/tasks/copy.js",
+    "jshint"     : "./node_modules/jshint/bin/jshint assets/_js/**/*.js --exclude assets/_js/vendor/**/* --reporter=node_modules/jshint-stylish",
+    "postcss"    : "node ./build/tasks/postcss.js",
+    "sass"       : "node ./build/tasks/sass.js",
+    "scsslint"   : "./node_modules/sass-lint/bin/sass-lint.js -v",
+    "test"       : "node ./build/tasks/karma.js",
+    "uglify"     : "node ./build/tasks/uglify.js",
+
+    "selfserve"  : "./node_modules/assemble/bin/cli.js selfserve",
+    "internal"   : "./node_modules/assemble/bin/cli.js internal",
+
+    "templates"  : "npm-run-all -s selfserve internal",
+    "images"     : "npm-run-all -s copy",
+    "css"        : "npm-run-all -s sass postcss",
+    "js"         : "npm-run-all -s concat uglify",
+
+    "compile"    : "npm-run-all -p scsslint jshint clean css js images",
+    "build"      : "npm-run-all -p compile templates",
+    "serve"      : "npm-run-all -s build browsersync",
+
+    "go"         : "npm run browsersync",
+    "ci"         : "npm run compile"
+  },
+  "pre-commit": [
+    "compile",  "templates",  "test"
+  ]
+}
