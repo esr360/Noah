@@ -38,7 +38,7 @@ npm install noah-npm
 
 Each executable task has its own `.js` file (found in the `/build/tasks/` directory) which is where your project specific details are passed for that task. Executing typically looks something like:
 
-```
+```js
 NOAH.task({
     src : 'public/js/selfserve.js',
     dest: 'public/js/selfserve.min.js'
@@ -47,7 +47,7 @@ NOAH.task({
 
 The corresponding entry in `package.json` would look something like:
 
-```
+```json
 "scripts": {
     "task": "node ./build/tasks/task.js"
 }
@@ -63,7 +63,7 @@ Where `task` is the name of the script/task to run.
 
 Each task has a default, basic-usage example, which will likely need to be modified for your project. Ensure you go through each task and check the options reflect your project's structure. For example, if your project requires two CSS files to be compiled, you may have something like this in your `/build/tasks/sass.js` file:
 
-```
+```js
 // Theme
 NOAH.sass({
     src : 'assets/styles/themes/internal.scss',
