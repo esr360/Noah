@@ -39,7 +39,7 @@
     "clean"      : "node ./build/tasks/clean.js",
     "concat"     : "node ./build/tasks/concat.js",
     "copy"       : "node ./build/tasks/copy.js",
-    "jshint"     : "./node_modules/jshint/bin/jshint assets/_js/**/*.js --exclude assets/_js/vendor/**/* --reporter=node_modules/jshint-stylish",
+    "jshint"     : "./node_modules/jshint/bin/jshint assets/js/*.js --exclude assets/vendor/**/* --reporter=node_modules/jshint-stylish",
     "postcss"    : "node ./build/tasks/postcss.js",
     "sass"       : "node ./build/tasks/sass.js",
     "scsslint"   : "./node_modules/sass-lint/bin/sass-lint.js -v",
@@ -51,13 +51,13 @@
     "js"         : "npm-run-all -s concat uglify",
 
     "compile"    : "npm-run-all -p scsslint jshint clean css js images",
-    "build"      : "npm-run-all -p compile templates",
+    "build"      : "npm-run-all -p compile assemble",
     "serve"      : "npm-run-all -s build browsersync",
 
     "go"         : "npm run browsersync",
     "ci"         : "npm run compile"
   },
   "pre-commit": [
-    "compile",  "templates",  "test"
+    "compile",  "assemble",  "test"
   ]
 }

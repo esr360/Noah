@@ -4,8 +4,7 @@ var NOAH = NOAH || {};
 
 NOAH.uglify = require('../modules/uglify').NOAH;
 
-// Selfserve
 NOAH.uglify({
-    src : 'public/js/selfserve.js',
-    dest: 'public/js/selfserve.min.js'
+    src : 'dist/js/example.js',
+    dest: 'dist/js/example.min.js'
 });

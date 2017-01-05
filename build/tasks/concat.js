@@ -2,11 +2,11 @@
 
 var NOAH = NOAH || {};
 
-NOAH.concat  = require('../modules/concat').NOAH;
-NOAH.scripts = require('../modules/concat').scripts;
+var filePaths = require('../modules/file-paths').filePaths;
 
-// Selfserve
+NOAH.concat  = require('../modules/concat').NOAH;
+
 NOAH.concat({
-    src : NOAH.scripts('selfserve'),
-    dest: 'public/js/selfserve.js'
+    src : filePaths('assets/js/'),
+    dest: 'dist/js/example.js'
 });

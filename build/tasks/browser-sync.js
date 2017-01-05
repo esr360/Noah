@@ -5,12 +5,12 @@ var NOAH = NOAH || {};
 var bs = require('browser-sync').create();
 var app = require('../../assemblefile');
 var extname = require('gulp-extname');
+var filePaths = require('../modules/file-paths').filePaths;
 
 /** Custom Tasks */
 NOAH.serve   = require('../modules/browser-sync').NOAH;
 NOAH.sass    = require('../modules/sass').NOAH;
 NOAH.concat  = require('../modules/concat').NOAH;
-NOAH.scripts = require('../modules/concat').scripts;
 NOAH.uglify  = require('../modules/uglify').NOAH;
 NOAH.test    = require('../modules/karma').NOAH;
 
@@ -18,27 +18,27 @@ NOAH.serve({
     notify: false,
     open: false,
     files: [
-      'public/styles/*.css', 
-      'public/js/*.js',
-      'public/styleguides/**/*.html'
+      'dist/css/*.css', 
+      'dist/js/*.js',
+      'dist/*.html'
     ],
     server: {
-        baseDir: 'public'
+        baseDir: 'dist'
     }
 });
 
 // Watch Sass files
-bs.watch('assets/_styles/**/*.scss', function(event, file) {
+bs.watch('assets/scss/**/*.scss', function(event, file) {
     if (event === 'change') {
       NOAH.sass({
-          src : 'assets/_styles/themes/selfserve.scss',
-          dest: 'public/styles/selfserve.css'
+          src : 'assets/scss/example.scss',
+          dest: 'dist/css/example.css'
       });
     }
 });
 
 // Watch JS files
-bs.watch('assets/_js/**/*.js', function(event, file) {
+bs.watch('assets/js/**/*.js', function(event, file) {
     var filename = file.replace(/^.*[\\\/]/, '').replace(/\..+$/, '');
     if (event === 'change') {
       NOAH.test({
@@ -46,20 +46,19 @@ bs.watch('assets/_js/**/*.js', function(event, file) {
           singlerun: false
       });
       NOAH.concat({
-          src : NOAH.scripts('selfserve'),
-          dest: 'public/js/selfserve.js'
+          src : filePaths('assets/js/'),
+          dest: 'dist/js/example.js'
       });
       NOAH.uglify({
-          src : 'public/js/selfserve.js',
-          dest: 'public/js/selfserve.min.js'
+          src : 'dist/js/example.js',
+          dest: 'dist/js/example.min.js'
       });
     }
 });
 
 // Watch HBS files
-bs.watch('styleguides/**/*.hbs', function(event, file) {
+bs.watch('assets/templates/**/*.hbs', function(event, file) {
     if (event === 'change') {
-      var theme = file.replace(/^/, '').split('/')[1];
-      app.file(theme, file);
+      app.file(file);
     }
 });

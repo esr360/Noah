@@ -31,10 +31,8 @@ NOAH.test = (function(options) {
       ],
 
       files: [
-        'assets/_js/vendor/jquery.1.11.0.js',
-        'assets/_js/vendor/**/*.js',
-        'assets/_js/components/*.js',
-        'test/js/setup.js',
+        'assets/vendor/**/*.js',
+        'assets/js/*.js',
         'test/js/' + component + '.test.js'
       ],
 

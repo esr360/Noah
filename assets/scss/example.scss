@@ -1,0 +1,8 @@
+@import 'example-1';
+
+.foo {
+    .bar {
+        content: 'Foo Bar';
+        color: $color;
+    }
+}

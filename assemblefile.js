@@ -17,22 +17,21 @@ app.helper('repeat', repeat);
 
 // Define default options
 app.option('assets', '../../');
-app.option('layout', 'base.hbs');
+app.option('layout', 'core.hbs');
 
-app.file = function(theme, file) {
+app.file = function(file) {
   app.partials([
-    'styleguides/partials/**/*.hbs',
-    'styleguides/' + theme + '/partials/**/*.hbs',
+    'assets/templates/partials/**/*.hbs'
   ]);
-  app.layouts('styleguides/' + theme + '/layouts/**/*.hbs');
+  app.layouts('assets/templates/layouts/**/*.hbs');
   app.src(file, { assets: '../../' })
     .pipe(app.renderFile('hbs'))
     .pipe(extname('.html'))
-    .pipe(app.dest('public/styleguides/' + theme));
+    .pipe(app.dest('dist/'));
 }
 
 app.task('app', function() {
-  app.file('app', 'styleguides/app/pages/**/*.hbs');
+  app.file('assets/templates/pages/**/*.hbs');
 });
 
 module.exports = app;

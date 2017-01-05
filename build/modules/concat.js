@@ -32,20 +32,3 @@ NOAH.concat = (function(options) {
 
 // Export the function to use in other files
 exports.NOAH = NOAH.concat;
-
-// Helper to get all scripts
-NOAH.scripts = function(theme) {
-    return [
-        'assets/_js/vendor/jquery.1.11.0.js',
-        'assets/_js/vendor/chosen.jquery.min.js',
-        'assets/_js/vendor/jquery.details.min.js',
-    ].concat(
-        filePaths('assets/_js/components/')
-    ).concat([
-        'assets/_js/init/common.js',
-        'assets/_js/init/' + theme + '.js'
-    ]);
-}
-
-// Export the scripts to be used by NOAH
-exports.scripts = NOAH.scripts;

@@ -6,5 +6,5 @@ NOAH.copy = require('../modules/copy').NOAH;
 
 NOAH.copy({
   src : 'assets/images/', 
-  dest: 'public/images/'
+  dest: 'dist/images/'
 });

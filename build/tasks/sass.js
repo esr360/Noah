@@ -4,15 +4,15 @@ var NOAH = NOAH || {};
 
 NOAH.sass = require('../modules/sass').NOAH;
 
-// Selfserve
+// Expanded
 NOAH.sass({
-    src : 'assets/_styles/themes/selfserve.scss',
-    dest: 'public/styles/selfserve.css'
+    src : 'assets/scss/example.scss',
+    dest: 'dist/css/example.css'
 });
 
-// Selfserve
+// Minified
 NOAH.sass({
-    src  : 'assets/_styles/themes/selfserve.scss',
-    dest : 'public/styles/selfserve.min.css',
+    src  : 'assets/scss/example.scss',
+    dest : 'dist/css/example.min.css',
     style: 'compressed'
 });
