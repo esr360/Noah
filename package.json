@@ -46,7 +46,6 @@
     "test"       : "node ./build/tasks/karma.js",
     "uglify"     : "node ./build/tasks/uglify.js",
 
-    "templates"  : "npm-run-all -s selfserve internal",
     "images"     : "npm-run-all -s copy",
     "css"        : "npm-run-all -s sass postcss",
     "js"         : "npm-run-all -s concat uglify",

@@ -31,12 +31,8 @@ app.file = function(theme, file) {
     .pipe(app.dest('public/styleguides/' + theme));
 }
 
-app.task('selfserve', function() {
-  app.file('selfserve', 'styleguides/selfserve/pages/**/*.hbs');
-});
-
-app.task('internal', function() {
-  app.file('internal', 'styleguides/internal/pages/**/*.hbs');
+app.task('app', function() {
+  app.file('app', 'styleguides/app/pages/**/*.hbs');
 });
 
 module.exports = app;
