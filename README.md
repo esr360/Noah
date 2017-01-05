@@ -18,8 +18,8 @@
 
 ### What's included?
 
-- CSS/Sass lint/autoprefix/compile
-- JS concatenate/uglify/lint/unit test
+- CSS/Sass lint|autoprefix|compile
+- JS concatenate|uglify|lint|unit test
 - Assemble/Handlebars
 - Browsersync
 - General tasks
