@@ -13,6 +13,9 @@ var app = assemble({
     layout: 'core.hbs'
 });
 
+// Set the assets directory
+app.data('assets', '../');
+
 // Register handlebars helpers
 app.helpers(helpers());
 app.helper('repeat', repeat);

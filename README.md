@@ -10,10 +10,13 @@
 ### Why NPM scripts?
 
 - Fewer dependencies (no need for Grunt/Gulp, and their respective task wrappers)
-- Speed
-- Future proof
+- Speed (by the time you click from your text editor to your browser, your code has already been recompiled and injected into the browser)
+- ~~More~~ Total control over your build steps
+- Future proof (protect your project from time-travellers)
 
 ### Why Noah?
+
+> Compile, test and depoly code on the fly as you develop
 
 - Includes everything required to get going off the bat
 - 100% Windows friendly (built for OSX)
@@ -27,6 +30,7 @@
 - JS concatenate | uglify | lint | unit test
 - Assemble/Handlebars
 - Browsersync + watching & live reload
+- Git pre-commit hook - never commit bad code again
 - General tasks
 
 ### Install
