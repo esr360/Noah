@@ -2,5 +2,6 @@
 .settings
 .sass-cache
 debug.log
+npm-debug.log
 node_modules
 dist

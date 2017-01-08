@@ -42,18 +42,22 @@ bs.watch('assets/scss/**/*.scss', function(event, file) {
 bs.watch('assets/js/**/*.js', function(event, file) {
     var filename = file.replace(/^.*[\\\/]/, '').replace(/\..+$/, '');
     if (event === 'change') {
-      NOAH.test({
-          component: filename,
-          singlerun: false
-      });
-      NOAH.concat({
-          src : filePaths('assets/js/'),
-          dest: 'dist/js/example.js'
-      });
-      NOAH.uglify({
-          src : 'dist/js/example.js',
-          dest: 'dist/js/example.min.js'
-      });
+        NOAH.test({
+            files: [
+                'assets/vendor/**/*.js',
+                'assets/js/*.js',
+                'test/js/' + filename + '.test.js'
+            ],
+            singlerun: false
+        });
+        NOAH.concat({
+            src : filePaths('assets/js/'),
+            dest: 'dist/js/example.js'
+        });
+        NOAH.uglify({
+            src : 'dist/js/example.js',
+            dest: 'dist/js/example.min.js'
+        });
     }
 });
 

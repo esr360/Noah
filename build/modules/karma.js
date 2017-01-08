@@ -12,7 +12,6 @@ var karma = require('karma').Server
 NOAH.test = (function(options) {
 
     // Options
-    var component = options.component || '*';
     var callback  = options.callback || process.exit;
     var singlerun = (options.singlerun !== 'undefined') ? options.singlerun : true;
 
@@ -31,11 +30,7 @@ NOAH.test = (function(options) {
             'karma-phantomjs-launcher'
         ],
 
-        files: [
-            'assets/vendor/**/*.js',
-            'assets/js/*.js',
-            'test/js/' + component + '.test.js'
-        ],
+        files: options.files,
 
         reporters: ['mocha'],
 

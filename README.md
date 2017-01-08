@@ -19,7 +19,6 @@
 > Compile, test and depoly code on the fly as you develop
 
 - Includes everything required to get going off the bat
-- 100% Windows friendly (built for OSX)
 - Adaptable/scalable to suit your project
 - Built for the modern front-end developer
 - Favours API usage over CLI wrappers
@@ -35,7 +34,7 @@
 
 ### Install
 
-##### Requirements
+#### Requirements
 
 All plugins use pure Node.js bindings, so the only things required are:
 
@@ -59,6 +58,7 @@ npm install noah-npm
 | Clean         | Clean/empty a directory                         | npm run clean       |
 | Concat        | Concatenate multiple files                      | npm run concat      |
 | Copy          | Copy files to a new location                    | npm run copy        |
+| JS-lint       | Lint JS files                                   | npm run jshint      |
 | Karma         | Run JS unit tests                               | npm run test        |
 | PostCSS       | Run Autoprefixer                                | npm run postcss     |
 | Sass          | Compile Sass                                    | npm run sass        |
