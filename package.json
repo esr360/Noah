@@ -58,6 +58,6 @@
     "ci"         : "npm run compile"
   },
   "pre-commit": [
-    //"compile",  "assemble",  "test"
+    "compile",  "assemble",  "test"
   ]
 }
