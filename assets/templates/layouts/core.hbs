@@ -6,16 +6,18 @@
         <title>{{title}}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="{{assets}}css/example.css" media="all" rel="stylesheet" type="text/css">
-        <script type="text/javascript" src="{{assets}}js/example.js"></script>
+        <link href="{{assets}}css/vendor.css" media="all" rel="stylesheet" type="text/css">
     </head>
 
     <body>
-            
+
         {{> header}}
 
         <h1>{{{title}}}</h1>
 
         {% body %}
 
+        <script type="text/javascript" src="{{assets}}js/example.js"></script>
+        <script type="text/javascript" src="{{assets}}js/vendor.js"></script>
     </body>
 </html>
