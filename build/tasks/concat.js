@@ -10,3 +10,13 @@ NOAH.concat({
     src : filePaths('assets/js/'),
     dest: 'dist/js/example.js'
 });
+
+NOAH.concat({
+    src : filePaths('assets/vendor/css/'),
+    dest: 'dist/css/vendor.css'
+});
+
+NOAH.concat({
+    src : filePaths('assets/vendor/js/'),
+    dest: 'dist/js/vendor.js'
+});
