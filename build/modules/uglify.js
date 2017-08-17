@@ -8,7 +8,7 @@ var NOAH = NOAH || {};
  */
 NOAH.uglify = (function(options) {
 
-    // Requirements 
+    // Requirements
     var fs = require('fs');
     var UglifyJS = require('uglify-js');
     var mkdirp = require('mkdirp');
@@ -22,7 +22,9 @@ NOAH.uglify = (function(options) {
 
     mkdirp(getDirName(dest), function (err) {
       if (err) return cb(err);
-      fs.writeFile(dest, result.code);
+      fs.writeFile(dest, result.code, (err) => {
+        if (err) throw err;
+      });
     });
 
     console.log(' ' + dest + ' built.');

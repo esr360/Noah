@@ -25,7 +25,9 @@ NOAH.concat = (function(options) {
 
     mkdirp(getDirName(dest), function (err) {
       if (err) return cb(err);
-      fs.writeFile(dest, out.join('\n'));
+      fs.writeFile(dest, out.join('\n'), (err) => {
+         if (err) throw err;
+      });
     });
 
     console.log(' ' + dest + ' built.');

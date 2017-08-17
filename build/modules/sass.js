@@ -24,7 +24,9 @@ NOAH.sass = (function(options) {
 
     mkdirp(getDirName(options.dest), function(err) {
       if (err) return cb(err);
-      fs.writeFile(options.dest, result.css);
+      fs.writeFile(options.dest, result.css, (err) => {
+        if (err) throw err;
+      });
     });
 
     console.log(' ' + options.dest + ' built.');
