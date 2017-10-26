@@ -17,19 +17,21 @@ NOAH.sass = (function(options) {
     // Options
     var style = options.style || 'expanded';
 
-    var result = sass.renderSync({
-        file: options.src,
-        outputStyle: style
-    });
+    setTimeout(() => {
+        var result = sass.renderSync({
+            file: options.src,
+            outputStyle: style
+        });
 
-    mkdirp(getDirName(options.dest), function(err) {
-      if (err) return cb(err);
-      fs.writeFile(options.dest, result.css, (err) => {
-        if (err) throw err;
-      });
-    });
+        mkdirp(getDirName(options.dest), function(err) {
+          if (err) return cb(err);
+          fs.writeFile(options.dest, result.css, (err) => {
+            if (err) throw err;
+          });
+        });
 
-    console.log(' ' + options.dest + ' built.');
+        console.log(' ' + options.dest + ' built.');
+    }, 50);
 });
 
 // Export the function to use in other files
